@@ -1,0 +1,40 @@
+﻿@model ForumProject.Models.Topics
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>@this.Model.TopicName</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Messages)
+        </th>
+        <th></th>
+    </tr>
+
+    @{
+        this.Model.Messages.OrderBy(m => m.Datetime);
+    }
+    @foreach (var item in this.Model.Messages.OrderBy(m => m.Datetime))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datetime)<br>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Add message", $"Create/{this.Model.Id}", "Messages")
+</p>

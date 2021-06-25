@@ -1,0 +1,92 @@
+﻿@model ForumProject.Models.Users
+
+@{
+    ViewBag.Title = "Details";
+    ForumProject.Models.Entities db = new ForumProject.Models.Entities();
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Users</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+
+    </dl>
+    @Html.ActionLink("Edit user", "Edit", new { id = Model.Id })
+</div>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Text
+            </th>
+            <th>
+                Datetime
+            </th>
+            <th>
+                Topicname
+            </th>
+            <th>
+                Username
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in this.Model.Messages.OrderBy(m => m.Datetime))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Datetime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Topics.TopicName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users.UserName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", $"Edit/{item.Id}", "Messages", null, new { id = item.Id }) |
+                    @Html.ActionLink("Details", $"Details/{item.Id}", "Messages", null, new { id = item.Id }) |
+                    @Html.ActionLink("Delete", $"Delete/{item.Id}", "Messages", null, new { id = item.Id })
+                               
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
