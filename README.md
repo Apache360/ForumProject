@@ -6,7 +6,7 @@ Basic forum on ASP.NET MVC5 Framework
 
 Если нету подключения к серверу (localdb)\MSSQLLocalDB подключение можно создать в "Обозревателе обьектов SQL Server".
 Нажать на "Добавить SQL Server", в окне "Подключится" во вкладке "Обзор" развернуть список "Локально" и выбрать MSSQLLocalDB.
-В поле Имя сервера указать: (localdb)\MSSQLLocalDB. В списке Имя базы данных выбрать: aspnet-ForumProject.
+В поле "Имя сервера" указать: (localdb)\MSSQLLocalDB. В списке "Имя базы данных" выбрать: aspnet-ForumProject.
 
 Диаграма базы данных имеет следующий вид:
 
