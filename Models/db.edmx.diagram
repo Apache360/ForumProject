@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6a8fe403a69042f289c3603514b78f55" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.Messages" Width="1.5" PointX="4.625" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Topics" Width="1.5" PointX="2.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Users" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Messages" Width="1.5" PointX="4.375" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Topics" Width="1.5" PointX="2.625" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Users" Width="1.5" PointX="0.875" PointY="2.5" IsExpanded="true" />
         <AssociationConnector Association="Model.FK_Messages_Topics" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Messages_Users" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Topic_Users" ManuallyRouted="false" />

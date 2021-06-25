@@ -12,19 +12,19 @@ namespace ForumProject.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class Entities : DbContext
     {
         public Entities()
             : base("name=Entities")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<Messages> Messages { get; set; }
         public virtual DbSet<Topics> Topics { get; set; }
         public virtual DbSet<Users> Users { get; set; }
